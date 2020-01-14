@@ -1,0 +1,12 @@
+@tailwind base;
+
+html {
+  @apply bg-black;
+}
+
+h1 {
+  @apply font-sans;
+}
+@tailwind components;
+
+@tailwind utilities;
