@@ -1,36 +1,49 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
+import Img from "gatsby-image"
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div className={"mx-auto max-w-xs"}></div>
-    <ul className={"flex justify-center flex-wrap p-5"}>
-      <li class="mr-6">
-        <h1 class="text-red-500 hover:text-blue-800">
-          <Link to="/">Home</Link>
-        </h1>
-      </li>
-      <li class="mr-6">
-        <h1 class="text-red-500 hover:text-blue-800">
-          <Link to="/about">Music</Link>
-        </h1>
-      </li>
-      <li class="mr-6">
-        <h1 class="text-red-500 hover:text-blue-800">
-          <Link to="/about">Social</Link>
-        </h1>
-      </li>
-    </ul>
+const Header = () => (
+  <header className="bg-black">
+    <div className="w-40 pt-6 mx-auto">
+      <Logo />
+    </div>
+
+    <div className="pt-3 px-12">
+      <ul className="flex justify-center text-center">
+        <li className="flex-auto">
+          <h1 className="text-gray-600 hover:text-gray-100">
+            <Link to="/">Home</Link>
+          </h1>
+        </li>
+        <li className="flex-auto mx-2">
+          <h1 className="text-gray-600 hover:text-gray-100">
+            <Link to="/music">Music</Link>
+          </h1>
+        </li>
+        <li className="flex-auto mx-2">
+          <h1 className="text-gray-600 hover:text-gray-100">
+            <Link to="/about">About</Link>
+          </h1>
+        </li>
+      </ul>
+    </div>
   </header>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
 export default Header
+
+const Logo = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "10.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+}
