@@ -1,11 +1,12 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
 import Img from "gatsby-image"
+import logo from "../images/10.png"
 
 const Header = () => (
   <header className="bg-black">
     <div className="w-40 pt-6 mx-auto">
-      <Logo />
+      <img src={logo} alt="Logo" />
     </div>
 
     <div className="pt-3 px-12">
@@ -31,19 +32,3 @@ const Header = () => (
 )
 
 export default Header
-
-const Logo = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "10.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 1000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-}
