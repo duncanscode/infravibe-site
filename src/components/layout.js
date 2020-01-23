@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="container px-32">
+      <div className="container mx-auto">
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
