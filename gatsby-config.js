@@ -22,4 +22,5 @@ module.exports = {
       },
     },
   ],
+  pathPrefix: "/infravibe-site",
 }
