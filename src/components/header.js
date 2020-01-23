@@ -12,18 +12,24 @@ const Header = () => (
     <div className="pt-3 px-12">
       <ul className="flex justify-center text-center">
         <li className="flex-auto">
-          <h1 className="text-gray-600 hover:text-gray-100">
-            <Link to="/">Home</Link>
+          <h1 className="text-gray-600 visited:text-red-600">
+            <Link to="/" activeStyle={{ color: "white" }}>
+              Home
+            </Link>
           </h1>
         </li>
         <li className="flex-auto mx-2">
           <h1 className="text-gray-600 hover:text-gray-100">
-            <Link to="/music">Music</Link>
+            <Link to="/music" activeStyle={{ color: "white" }}>
+              Music
+            </Link>
           </h1>
         </li>
         <li className="flex-auto mx-2">
           <h1 className="text-gray-600 hover:text-gray-100">
-            <Link to="/about">About</Link>
+            <Link to="/about" activeStyle={{ color: "white" }}>
+              About
+            </Link>
           </h1>
         </li>
       </ul>
