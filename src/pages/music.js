@@ -5,6 +5,7 @@ export default () => (
   <Layout>
     <div className="pl-5 pt-10">
       <iframe
+        title="Up To Snow Good"
         width="90%"
         height="166"
         scrolling="no"
