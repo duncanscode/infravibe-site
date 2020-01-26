@@ -6,7 +6,7 @@ import youtube from "../images/icons/youtube.png"
 
 const Footer = () => (
   <footer>
-    <div className="flex justify-center p-4 border-t sticky inset-x-0 bottom-0">
+    <div className="flex justify-center pb-4">
       <a href="https://www.facebook.com/InfraVibe">
         <img className="h-8 mr-4" src={fb} alt="Facebook" />
       </a>
