@@ -3,17 +3,6 @@ import Layout from "../components/layout.js"
 
 export default () => (
   <Layout>
-    <div class="flex flex-col items-stretch bg-gray-200 h-full">
-      <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-        1
-      </div>
-      <div class="self-center flex-1 text-gray-800 text-center bg-gray-500 px-4 py-2 m-2">
-        2
-      </div>
-      <div class="flex-1 text-gray-700 text-center bg-gray-400 px-4 py-2 m-2">
-        3
-      </div>
-    </div>
     <button>
       {" "}
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
