@@ -2,6 +2,7 @@
 
 html {
   @apply bg-black;
+  @apply text-white;
 }
 
 h1 {

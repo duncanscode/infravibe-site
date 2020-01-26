@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
 import Img from "gatsby-image"
-import logo from "../images/10.png"
+import logo from "../images/logo/10.png"
 
 const Header = () => (
   <header className="bg-black">
