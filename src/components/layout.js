@@ -8,20 +8,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import "typeface-orbitron"
-
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
-      <div className="container mx-auto">
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+      <div className="flex flex-col h-screen">
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
       </div>
     </>
   )
