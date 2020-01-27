@@ -27,8 +27,8 @@ export const myQuery = graphql`
   query {
     album: file(relativePath: { eq: "5.jpg" }) {
       childImageSharp {
-        fluid(maxHeight: 1000) {
-          ...GatsbyImageSharpFluid
+        fluid(maxHeight: 500, quality: 100) {
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }

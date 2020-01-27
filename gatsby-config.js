@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: `/infravibe-site`,
   plugins: [
     {
       resolve: "gatsby-plugin-postcss",
@@ -17,10 +18,9 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "images",
+        name: `images`,
         path: `${__dirname}/src/images`,
       },
     },
   ],
-  pathPrefix: "/infravibe-site",
 }
