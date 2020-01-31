@@ -6,17 +6,22 @@ import Img from "gatsby-image"
 const IndexPage = props => (
   <Layout>
     <div className="mx-8 py-2">
-      <div className="mx-2 my-4 p-1">
-        <button className="bg-transparent border-2 border-white font-mono text-sm hover:bg-gray-200 hover:text-black mx-10 py-2">
+      <div className="flex items-center mx-2 my-4 p-1">
+        <button className="bg-transparent border-2 border-white font-hairline text-sm hover:bg-gray-200 hover:text-black hover:font-normal mx-auto py-4 w-64">
           SYNTHETIC AMBIENCE EP OUT NOW
         </button>
       </div>
 
-      <div className="max-h-full">
+      <div className="mx-auto">
         <a href="https://smarturl.it/SyntheticAmbienceEP">
           <Img fluid={props.data.album.childImageSharp.fluid} />
         </a>
       </div>
+
+      <h1>
+        Unique, futuristic sound design that is bass driven with high energy and
+        infectious vibes.
+      </h1>
     </div>
   </Layout>
 )
@@ -28,7 +33,7 @@ export const myQuery = graphql`
     album: file(relativePath: { eq: "5.jpg" }) {
       childImageSharp {
         fluid(maxHeight: 500, quality: 100) {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid
         }
       }
     }
