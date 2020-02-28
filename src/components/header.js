@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery, Link } from "gatsby"
 import React from "react"
 import Img from "gatsby-image"
-import logo from "../images/logo/10.png"
+import logo from "../files/logo/10.png"
 
 const Header = () => (
   <header className="bg-black">
@@ -22,6 +22,13 @@ const Header = () => (
           <h1 className="text-gray-600 hover:text-gray-100">
             <Link to="/music" activeStyle={{ color: "white" }}>
               Music
+            </Link>
+          </h1>
+        </li>
+        <li className="flex-auto mx-2">
+          <h1 className="text-gray-600 hover:text-gray-100">
+            <Link to="/shows" activeStyle={{ color: "white" }}>
+              Shows
             </Link>
           </h1>
         </li>

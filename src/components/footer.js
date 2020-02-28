@@ -1,8 +1,8 @@
 import React from "react"
-import fb from "../images/icons/fb.png"
-import twtr from "../images/icons/twitter.png"
-import insta from "../images/icons/insta.png"
-import youtube from "../images/icons/youtube.png"
+import fb from "../files/icons/fb.png"
+import twtr from "../files/icons/twitter.png"
+import insta from "../files/icons/insta.png"
+import youtube from "../files/icons/youtube.png"
 
 const Footer = () => (
   <footer>

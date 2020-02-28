@@ -7,11 +7,13 @@ const AboutPage = props => (
   <Layout>
     <div className="m-8 py-2">
       <Img fluid={props.data.temp.childImageSharp.fluid} />
-      Infravibe is a Canadian electronic Music Producer/DJ born and raised in
-      Kelowna, BC. Expect everything from chill vibes all the way up to quality
-      headbanging dubstep, neuro, and halftime. His mixes are jam packed with
-      the most futuristic and current sounds that aim to push boundaries and
-      expand your mind in the electronic scene.
+      <p className="font-body">
+        Infravibe is a Canadian electronic Music Producer/DJ born and raised in
+        Kelowna, BC. Expect everything from chill vibes all the way up to
+        quality headbanging dubstep, neuro, and halftime. His mixes are jam
+        packed with the most futuristic and current sounds that aim to push
+        boundaries and expand your mind in the electronic scene.
+      </p>
     </div>
   </Layout>
 )

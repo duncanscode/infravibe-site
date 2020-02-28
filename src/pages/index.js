@@ -18,7 +18,7 @@ const IndexPage = props => (
         </a>
       </div>
 
-      <h1>
+      <h1 className="text-center my-8">
         Unique, futuristic sound design that is bass driven with high energy and
         infectious vibes.
       </h1>
