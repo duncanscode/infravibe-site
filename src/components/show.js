@@ -3,7 +3,7 @@ import React from "react"
 import Img from "gatsby-image"
 
 const Show = props => {
-  return <div>I'm a cock</div>
+  return <div>I'm a component</div>
 }
 
 export default Show
