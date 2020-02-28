@@ -4,6 +4,7 @@ import Layout from "../components/layout.js"
 export default () => (
   <Layout>
     <div className="pl-5 pt-10">
+      Latest Release
       <iframe
         title="Up To Snow Good"
         width="90%"
