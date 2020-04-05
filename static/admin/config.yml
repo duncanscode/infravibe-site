@@ -20,7 +20,7 @@ collections:
   - name: "music"
     label: "Music"
     description: "Music, mixes, videos"
-    slug: "{{name}}"
+    slug: "{{title}}"
     folder: "src/content/music"
     create: true
     fields:
