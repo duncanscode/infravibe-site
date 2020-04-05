@@ -16,13 +16,37 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/static/img`,
+        name: "images",
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: `files`,
         path: `${__dirname}/src/files`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/content`,
+        name: "content",
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: `gatsby-remark-images`,
+          },
+        ],
+      },
+    },
     `gatsby-plugin-netlify-cms`,
   ],
 }

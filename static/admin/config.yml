@@ -16,3 +16,14 @@ collections:
           - { label: Title, name: title, widget: string }
           - { label: Intro text, name: intro, widget: text }
           - { label: Image, name: image, widget: image }
+
+  - name: "music"
+    label: "Music"
+    description: "Music, mixes, videos"
+    slug: "{{name}}"
+    folder: "src/content/music"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: string }
+      - { label: "Artwork", name: "art", widget: image }
+      - { label: "Link", name: "link", widget: string }
