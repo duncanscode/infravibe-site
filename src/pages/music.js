@@ -21,12 +21,14 @@ const Music = ({ data }) => {
       </div>
 
       <div className="container mx-auto px-4 py-4">
-        <div class="max-w-xs mx-auto px-4">
+        <div class="max-w-xs md:max-w-md  lg:max-w-lg mx-auto px-4">
           {edges.map(edge => {
             const { frontmatter } = edge.node.childMarkdownRemark
             return (
-              <div>
-                <Img fluid={frontmatter.art.childImageSharp.fluid} />
+              <div class="pb-6">
+                <a href={frontmatter.link}>
+                  <Img fluid={frontmatter.art.childImageSharp.fluid} />
+                </a>
                 <div class="flex items-center justify-between text-white pb-3 font-bold">
                   {frontmatter.title}
                   <a href={frontmatter.link}>
