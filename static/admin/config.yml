@@ -17,13 +17,13 @@ collections:
           - { label: Intro text, name: intro, widget: text }
           - { label: Image, name: image, widget: image }
 
-      - label: "about page"
+      - label: "About Page"
         name: "about"
         file: "src/content/about.md"
         fields:
           - { label: Title, name: title, widget: string }
           - { label: Description text, name: description, widget: text }
-          - { label: Image, name: image, widget: image }
+          - { label: Image, name: aboutimage, widget: image }
 
   - name: "music"
     label: "Music"
