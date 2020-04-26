@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const AboutPage = props => {
-  const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  //const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
   return (
     <Layout>
       <div>
@@ -20,11 +20,8 @@ const AboutPage = props => {
       </div>
 
       <div className="container mx-auto px-4 py-4">
-        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4">
-          <Img fluid={data.image.childImageSharp.fluid} />
-        </div>
+        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4"></div>
       </div>
-      <div>{data.description}</div>
     </Layout>
   )
 }
@@ -41,7 +38,7 @@ export const query = graphql`
           childMarkdownRemark {
             frontmatter {
               title
-              description
+
               image {
                 childImageSharp {
                   fluid(maxHeight: 1000) {
