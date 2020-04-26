@@ -3,29 +3,54 @@ import Layout from "../components/layout.js"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const AboutPage = props => (
-  <Layout>
-    <div className="m-8 py-2">
-      <Img fluid={props.data.temp.childImageSharp.fluid} />
-      <p className="font-body">
-        Infravibe is a Canadian electronic Music Producer/DJ born and raised in
-        Kelowna, BC. Expect everything from chill vibes all the way up to
-        quality headbanging dubstep, neuro, and halftime. His mixes are jam
-        packed with the most futuristic and current sounds that aim to push
-        boundaries and expand your mind in the electronic scene.
-      </p>
-    </div>
-  </Layout>
-)
+const AboutPage = props => {
+  const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  return (
+    <Layout>
+      <div>
+        <div className="container mx-auto px-4 py-10">
+          <div class="flex flex-col">
+            <div class="flex justify-center">
+              <button className="bg-transparent border-2 border-white font-hairline text-sm hover:bg-gray-200 hover:text-black hover:font-normal py-4 w-64">
+                About
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 py-4">
+        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4">
+          <Img fluid={data.image.childImageSharp.fluid} />
+        </div>
+      </div>
+      <div>{data.description}</div>
+    </Layout>
+  )
+}
 
 export default AboutPage
 
-export const myQuery = graphql`
-  query {
-    temp: file(relativePath: { eq: "temp.jpg" }) {
-      childImageSharp {
-        fluid(maxHeight: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+export const query = graphql`
+  query aboutQuery {
+    allFile(
+      filter: { sourceInstanceName: { eq: "content" }, name: { eq: "about" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              description
+              image {
+                childImageSharp {
+                  fluid(maxHeight: 1000) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }

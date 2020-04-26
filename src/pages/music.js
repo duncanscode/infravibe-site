@@ -22,7 +22,7 @@ const Music = ({ data }) => {
 
       <div className="container mx-auto px-4 py-4">
         <div class="max-w-xs md:max-w-md  lg:max-w-lg mx-auto px-4">
-          {edges.map(edge => {
+          {edges.slice(0, 3).map(edge => {
             const { frontmatter } = edge.node.childMarkdownRemark
             return (
               <div class="pb-6">

@@ -3,37 +3,53 @@ import Layout from "../components/layout.js"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const IndexPage = props => (
-  <Layout>
-    <div className="mx-8 py-2">
-      <div className="flex items-center mx-2 my-4 p-1">
-        <button className="bg-transparent border-2 border-white font-hairline text-sm hover:bg-gray-200 hover:text-black hover:font-normal mx-auto py-4 w-64">
-          SYNTHETIC AMBIENCE EP OUT NOW
-        </button>
+const IndexPage = props => {
+  const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  return (
+    <Layout>
+      <div>
+        <div className="container mx-auto px-4 py-10">
+          <div class="flex flex-col">
+            <div class="flex justify-center">
+              <button className="bg-transparent border-2 border-white font-hairline text-sm hover:bg-gray-200 hover:text-black hover:font-normal py-4 w-64">
+                {data.title}
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div className="mx-auto">
-        <a href="https://smarturl.it/SyntheticAmbienceEP">
-          <Img fluid={props.data.album.childImageSharp.fluid} />
-        </a>
+      <div className="container mx-auto px-4 py-4">
+        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4">
+          <Img fluid={data.image.childImageSharp.fluid} />
+        </div>
       </div>
-
-      <h1 className="text-center my-8">
-        Unique, futuristic sound design that is bass driven with high energy and
-        infectious vibes.
-      </h1>
-    </div>
-  </Layout>
-)
+    </Layout>
+  )
+}
 
 export default IndexPage
 
-export const myQuery = graphql`
-  query {
-    album: file(relativePath: { eq: "5.jpg" }) {
-      childImageSharp {
-        fluid(maxHeight: 500, quality: 100) {
-          ...GatsbyImageSharpFluid
+export const query = graphql`
+  query MyQuery {
+    allFile(
+      filter: { sourceInstanceName: { eq: "content" }, name: { eq: "home" } }
+    ) {
+      edges {
+        node {
+          childMarkdownRemark {
+            frontmatter {
+              title
+              intro
+              image {
+                childImageSharp {
+                  fluid(maxHeight: 1000) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
+          }
         }
       }
     }
