@@ -5,7 +5,6 @@
  */
 
 module.exports = {
-  pathPrefix: `/infravibe-site`,
   plugins: [
     {
       resolve: "gatsby-plugin-postcss",
@@ -13,8 +12,6 @@ module.exports = {
         postCssPlugins: [require("tailwindcss")],
       },
     },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -36,6 +33,8 @@ module.exports = {
         name: "content",
       },
     },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -43,6 +42,9 @@ module.exports = {
           "gatsby-remark-relative-images",
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+            },
           },
         ],
       },

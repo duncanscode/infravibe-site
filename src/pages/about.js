@@ -4,21 +4,26 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 const AboutPage = props => {
-  //const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
+  const data = props.data.allFile.edges[0].node.childMarkdownRemark.frontmatter
   return (
     <Layout>
       <div>
         <div className="container mx-auto px-4 py-10">
           <div class="flex flex-col">
             <div class="flex justify-center">
-              <button className="bg-transparent border-2 border-white font-hairline text-sm hover:bg-gray-200 hover:text-black hover:font-normal py-4 w-64"></button>
+              <h1 class="text-center text-2xl text-black bg-white font-bold px-4">
+                {data.title}
+              </h1>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 py-4">
-        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4"></div>
+      <div className="container mx-auto px-10 py-4">
+        <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4">
+          <Img fluid={data.aboutimage.childImageSharp.fluid} />
+        </div>
+        <div className="text-left">{data.description}</div>
       </div>
     </Layout>
   )
@@ -33,11 +38,12 @@ export const query = graphql`
     ) {
       edges {
         node {
+          absolutePath
           childMarkdownRemark {
             frontmatter {
               title
-
-              image {
+              description
+              aboutimage {
                 childImageSharp {
                   fluid(maxHeight: 1000) {
                     ...GatsbyImageSharpFluid
