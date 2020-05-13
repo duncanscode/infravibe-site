@@ -19,7 +19,7 @@ const AboutPage = props => {
         </div>
       </div>
 
-      <div className="container mx-auto px-10 py-4">
+      <div className="container mx-auto px-10 lg:px-40 py-4">
         <div class="max-w-xs sm:max-w-sm md:max-w-md  lg:max-w-3xl mx-auto px-4">
           <Img fluid={data.aboutimage.childImageSharp.fluid} />
         </div>

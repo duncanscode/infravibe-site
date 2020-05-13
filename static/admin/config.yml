@@ -35,3 +35,22 @@ collections:
       - { label: "Title", name: "title", widget: string }
       - { label: "Artwork", name: "art", widget: image }
       - { label: "Link", name: "link", widget: string }
+
+  - name: "shows"
+    label: "Shows"
+    descripton: "Upcoming Shows"
+    slug: "{{venue}} show"
+    folder: "src/content/shows"
+    create: true
+    fields:
+      - { label: "Venue", name: "venue", widget: string }
+      - { label: "City", name: "city", widget: string }
+      - {
+          label: "Date and time",
+          name: "datetime",
+          widget: datetime,
+          dateFormate: "DD.MM.YYYY",
+          timeFormat: "HH:mm",
+          format: "LLL",
+        }
+      - { label: "Tickets Link", name: "link", widget: string }
